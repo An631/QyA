@@ -1,6 +1,6 @@
 // CONNECTION
-//const host = "wss://qya.azurewebsites.net/";
-const host = "ws://localhost:1337/";
+const host = "wss://qya.azurewebsites.net/";
+const localhost = "ws://localhost:1337/";
 var ws;
 
 // UI ELEMENTS
@@ -21,8 +21,9 @@ function setupUIElements(){
 }
 // Initiates a connection with the websocket server and 
 // setting up its connection listeners
-function setupConnection() {
-    ws = new WebSocket(host);
+function setupConnection(url = host) {
+    console.log("Opening websocket connection to: " + url);
+    ws = new WebSocket(url);
 
     ws.addEventListener("open", () => {
         console.log("Connection started");
@@ -48,7 +49,8 @@ function setupConnection() {
 
     ws.addEventListener("error", (e) => {
         console.log("The connection failed");
-
+        console.log("Retrying with local url");
+        setupConnection(localhost);
     }, false);
 }
 
