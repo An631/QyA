@@ -9,9 +9,12 @@
     </head>
     <body>
          <div>QyA Client</div>
-         QUESTION: <input type="text" id="questionTxt" placeholder="Ask a question..."/>
+         ASK: <input type="text" id="questionTxt" placeholder="Ask a question..." onkeypress="return questionTxtKeyPress(event)"/>
          <input type="button" value="Ask" onclick="sendQuestion()" />
-        <div id="Testing-Response"></div>
+        <span id="Notification"></span>
+        <hr>
+        <div>LIST OF QUESTIONS:</div>
         <div id="Testing-QuestionsList"></div>
+        <hr>
     </body>
 </html>

@@ -20,6 +20,7 @@ function connectHandler(conn) {
     conn.on("message", messageHandler);
     conn.on("close", closeHandler);
     clients.push(conn);
+    sendAllQuestionsToClient(conn);
     console.log("New Client connected: " + conn.identifier);
 }
 
