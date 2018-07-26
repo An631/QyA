@@ -9,9 +9,14 @@
         "node": ">=6.9.1"
     },
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "tst": "node testClient.js"
     },
     "dependencies": {
-        "websocket": "^1.0.26"
+        "azure-storage": "^2.10.0",
+        "react": "^16.4.1",
+        "webpack": "^4.16.2",
+        "websocket": "^1.0.26",
+        "ws": "^6.0.0"
     }
 }
