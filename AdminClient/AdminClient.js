@@ -1,5 +1,5 @@
 // CONNECTION
-const host = "wss://qya-ppe.azurewebsites.net/";
+const host = "wss://qya.azurewebsites.net/";
 const localhost = "ws://localhost:1337/";
 const api = {
     responseTypes: {
