@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="AdminClient.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="adminPage.css">
+        <title>
+             QyA Admin
+        </title>
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1 class="mx-auto text-center font-weight-normal">QyA Admin Client</h1>
+            
+            <div id="SessionCreateContainer" class="container-fluid">
+                <h3 class="font-weight-bold">Create and Manage Session</h3>
+                <div class="ml-md-5 font-weight-bold">
+                    Session Title: <input type="text" id="title" placeholder="Name your session..."/>
+                    Set session start time: <input type="datetime-local" id="startTime"/>
+                    Set session end time: <input type="datetime-local" id="endTime"/>
+                    <button type="submit" class="btn btn-primary mb-2" onclick="createSession()">Create Session</button>
+                </div>
+            </div>
+            <div id="RejoinContainer" class="container-fluid">
+                <h3 class="font-weight-bold">Rejoin Session</h3>
+                <div class="ml-md-5 font-weight-bold">
+                    <!--Ask yourself a question: <input type="text" id="question" placeholder="Test a question..."/>
+                    <button type="submit" class="btn btn-primary mb-2" onclick="sendQuestion()">Ask!</button>-->
+                    Admin PIN: <input type="text" id="rejoinPin" placeholder="Enter your Admin PIN to rejoin"/>
+                    <input type="button" class="btn btn-primary mb-2" value="Rejoin Session" onclick="rejoinSession()" />
+                </div>
+            </div>
+            <div id="ClientPinContainer" class="container-fluid">
+                <h3 class="font-weight-bold"> 
+                    <span class="ml-xs-3 font-weight-bold" id="TitleDisplay"></span>
+                    <span class="ml-xs-3 font-weight-bold" id="ClientPinDisplay" style="color:white"></span>
+                    <div align="right"> 
+                        <div id="AdminPinDisplay" class="collapse"></div>
+                        <button id="AdminToggleButton" type="button" class="btn btn-info" data-toggle="collapse" data-target="#AdminPinDisplay">AdminPin</button>
+                    </div>
+                </h3>
+            </div>
+            
+            <span class="ml-xs-3 font-weight-bold" id="Notification"></span>
+            <hr>
+            <div>
+                <h5 class="font-weight-bold" id="list">
+                    List of Questions
+                    <button type="submit" class="btn btn-primary" onclick="getAllQuestions()">Refresh</button>
+                </h5>
+            </div>
+            <div class="bg-primary">
+                <h4 class="font-weight-bold"> Current Question </h4>
+                <ol class="list-group" id="Testing-QuestionsList">
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

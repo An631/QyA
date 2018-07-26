@@ -1,20 +1,75 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <script src="QyAWebApp.js"></script>
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <title>
-             QyA
-        </title>
 
-    </head>
-    <body>
-         <div>QyA Client</div>
-         ASK: <input type="text" id="questionTxt" placeholder="Ask a question..." onkeypress="return questionTxtKeyPress(event)"/>
-         <input type="button" value="Ask" onclick="sendQuestion()" />
-        <span id="Notification"></span>
-        <hr>
-        <div>LIST OF QUESTIONS:</div>
-        <div id="Testing-QuestionsList"></div>
-        <hr>
-    </body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="QyAWebApp.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>
+        QyA
+    </title>
+
+</head>
+
+<body>
+    <div id="PinRequestContainer" class="container-fluid">
+        <div class="d-flex flexlayout align-items-center justify-content-center">
+            <div>
+                <h1 class="text-center font-weight-bold" style="width:100%">Welcome to QyA</h1>
+                <div class="row" style="width:100%">
+                    <div class="col-xs-10 col-md-10 align-self-center">
+                        <label for="sessionPIN" class="sr-only">QyA PIN</label>
+                        <input type="text" class="form-control" id="sessionPIN" placeholder="QyA Session PIN#" />
+                        <label for="userName" class="sr-only">Your Name</label>
+                        <input type="text" class="form-control" id="userName" placeholder="Name" />
+                    </div>
+                    <div class="col-xs-2 col-md-2 align-self-center">
+                        <button type="submit" class="btn btn-primary mb-2" onClick="sendPIN()">GO!</button>
+                    </div>
+                </div>
+                <div class="row mx-auto" style="width:75%">
+                    <div class="col ml-3" id="PinNotification"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ClientAppContainer" style="display:none">
+        <div class="container-fluid">
+            <h1 class="mx-auto text-center font-weight-normal">QyA Client</h1>
+            <div>
+                <div class="row mx-auto" style="width:100%">
+                    <div class="col-xs-10 col-md-10">
+                        <label htmlFor="questionBox" class="sr-only">Question</label>
+                        <input type="text" class="form-control" id="questionTxt" placeholder="Ask a question..." />
+                    </div>
+                    <div class="col-xs-2 col-md-2">
+                        <button type="submit" class="btn btn-primary mb-2" onClick="sendQuestion()">Ask!</button>
+                    </div>
+                </div>
+                <div class="row mx-auto" style="width:75%">
+                    <div class="col ml-3" id="Notification"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bg-primary mt-5">
+            <h2 class="mx-auto font-weight-bold" style="width:400px">List of Questions             <button type="submit" class="btn btn-primary mb-2" onClick="getAllQuestions()">Refresh</button>
+
+            </h2>
+            <h4 class="font-weight-bold"> Current Question </h4>
+
+            <ol class="list-group" id="Testing-QuestionsList">
+            </ol>
+        </div>
+    </div>
+</body>
+
 </html>

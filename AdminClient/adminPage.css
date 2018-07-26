@@ -1,22 +1,33 @@
+#Notification{
+    
+    color: darkgreen;
+}
+
 body {
-    font-family: Verdana, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: lighter;
     color: #2E323C;
     background-color: #91B3BC;
 }
 
-h4{
-    color:#2B4251;
+h3{
+    background-color:#2B4251;
+    color:#91B3BC;
     padding: 10px;
     padding-left: 20px;
-    margin-bottom: 0;
+}
+
+h4{
+    color:#2E323C;
+    padding: 10px;
+    padding-left: 20px;
 }
 
 h5{
-    color:#2B4251;
+    background-color:#5B7D87;
+    color:#2E323C;
     padding: 10px;
     padding-left: 20px;
-    margin-bottom: 0;
 }
 
 .bg-primary{
@@ -37,19 +48,12 @@ h5{
 .btn-primary{
     background-color:#45415E;
     border-color:#2B4251;
+    margin: 2px;
+    padding: 5px;
 }
 
 .btn-primary:hover{
     background-color:#5B7D87;
     border-color:#2B4251;
     color:#2E323C;
-}
-
-.flexlayout {
-    width: 100%;
-    height: 100%; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100; /* Just to keep it at the very top */
 }
